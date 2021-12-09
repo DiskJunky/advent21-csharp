@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace advent21_csharp.Console.Tests
+﻿namespace advent21_csharp.Console.Tests
 {
     /// <summary>
     /// This class is used to read data from a data source that contains sounding data.

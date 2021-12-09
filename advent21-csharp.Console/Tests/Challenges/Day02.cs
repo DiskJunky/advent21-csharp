@@ -1,9 +1,9 @@
 ﻿namespace advent21_csharp.Console.Tests.Challenges
 {
     /// <summary>
-    /// The challenge implementation for the first day.
+    /// The challenge implementation for the second day.
     /// </summary>
-    public class Day01 : IChallenge
+    public class Day02 : IChallenge
     {
         /// <summary>
         /// Executes the challenge results for the first day.
@@ -28,6 +28,7 @@
             }
 
             System.Console.WriteLine($"{GetType().Name}: Found [{increaseCount}] soundings that increased.");
+
         }
     }
 }

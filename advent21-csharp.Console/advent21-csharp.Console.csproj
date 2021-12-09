@@ -6,6 +6,7 @@
     <RootNamespace>advent21_csharp.Console</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <StartupObject>advent21_csharp.Console.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
