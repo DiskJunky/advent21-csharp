@@ -1,4 +1,4 @@
-﻿namespace advent21_csharp.Console.Tests
+﻿namespace advent21_csharp.Console.Challenges
 {
     /// <summary>
     /// This defines the runnable structure for each challenge.

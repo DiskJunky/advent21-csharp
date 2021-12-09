@@ -1,4 +1,4 @@
-﻿using advent21_csharp.Console.Tests.Challenges;
+﻿using advent21_csharp.Console.Challenges;
 
 namespace advent21_csharp.Console
 {

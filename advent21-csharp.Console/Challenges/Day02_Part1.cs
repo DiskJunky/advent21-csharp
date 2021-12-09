@@ -1,16 +1,18 @@
-﻿namespace advent21_csharp.Console.Tests.Challenges
+﻿using advent21_csharp.Console.Helpers;
+
+namespace advent21_csharp.Console.Challenges
 {
     /// <summary>
-    /// The challenge implementation for the first part of the first day.
+    /// The challenge implementation for the first part of the second day.
     /// </summary>
-    public class Day01_Part1 : IChallenge
+    public class Day02_Part1 : IChallenge
     {
         /// <summary>
-        /// Executes the challenge results for the first part of the first day.
+        /// Executes the challenge results for the first part of the second day.
         /// </summary>
         public void Run()
         {
-            string filePath = Path.Combine("Tests", "Data", "day1.txt");
+            string filePath = Path.Combine("Tests", "Data", "day01.txt");
             var soundingReader = new SoundingReader(filePath);
             var readings = soundingReader.Load();
 

@@ -1,4 +1,4 @@
-﻿namespace advent21_csharp.Console.Tests
+﻿namespace advent21_csharp.Console.Helpers
 {
     /// <summary>
     /// This class is used to read data from a data source that contains sounding data.
