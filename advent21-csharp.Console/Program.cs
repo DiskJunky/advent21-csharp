@@ -10,8 +10,8 @@ namespace advent21_csharp.Console
         public static void Main(params string[] args)
         {
             // execute the challenge results
-            (new Day01()).Run();
-            (new Day02()).Run();
+            (new Day01_Part1()).Run();
+            (new Day01_Part2()).Run();
         }
     }
 

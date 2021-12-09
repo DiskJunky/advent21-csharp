@@ -1,12 +1,12 @@
 ﻿namespace advent21_csharp.Console.Tests.Challenges
 {
     /// <summary>
-    /// The challenge implementation for the second day.
+    /// The challenge implementation for the second part of the first day.
     /// </summary>
-    public class Day02 : IChallenge
+    public class Day01_Part2 : IChallenge
     {
         /// <summary>
-        /// Executes the challenge results for the first day.
+        /// Executes the challenge results for the second part of the first day.
         /// </summary>
         public void Run()
         {
