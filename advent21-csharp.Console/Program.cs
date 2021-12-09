@@ -8,6 +8,10 @@ namespace advent21_csharp.Console
     /// </summary>
     public static class Program
     {
+        /// <summary>
+        /// The main program entry point.
+        /// </summary>
+        /// <param name="args">The arguments passed into the program.</param>
         public static void Main(params string[] args)
         {
             var challenges = ReflectionHelper.GetImplementationsOf<IChallenge>();
@@ -18,5 +22,4 @@ namespace advent21_csharp.Console
             }
         }
     }
-
 }

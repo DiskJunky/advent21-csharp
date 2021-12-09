@@ -3,20 +3,15 @@
     /// <summary>
     /// This class is used to read data from a data source that contains sounding data.
     /// </summary>
-    public class SoundingReader
+    public class SoundingReader : FileReader
     {
-        private string? _filePath;
-
         /// <summary>
-        /// Initializes the <c type="SoundingReader"></c> with the specifiedl value in <paramref name="filePath"/>.
+        /// The default constructor used.
         /// </summary>
-        /// <param name="filePath">The file name and path of the file to load.</param>
-        public SoundingReader(string? filePath)
+        /// <param name="filePath">The full path of the file to load.</param>
+        public SoundingReader(string? filePath) : base(filePath)
         {
-            FilePath = filePath;
         }
-        
-        public string? FilePath { get => _filePath; protected set => _filePath = value; }
 
         /// <summary>
         /// Load the file specified in FilePath and returns them.
@@ -24,7 +19,7 @@
         /// <returns>The list of soundings in the data.</returns>
         public List<int> Load()
         {
-            List<string?> soundings = new List<string?>();
+            List<string> soundings = base.Load();
 
             soundings = new List<string?>(File.ReadAllLines(FilePath));
             var intSoundings = soundings.Where(s => !string.IsNullOrWhiteSpace(s))
