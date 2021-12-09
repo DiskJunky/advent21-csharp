@@ -1,4 +1,5 @@
 ﻿using advent21_csharp.Console.Challenges;
+using advent21_csharp.Console.Helpers;
 
 namespace advent21_csharp.Console
 {
@@ -9,9 +10,12 @@ namespace advent21_csharp.Console
     {
         public static void Main(params string[] args)
         {
-            // execute the challenge results
-            (new Day01_Part1()).Run();
-            (new Day01_Part2()).Run();
+            var challenges = ReflectionHelper.GetImplementationsOf<IChallenge>();
+            foreach (var challengeType in challenges)
+            {
+                var challenge = Activator.CreateInstance(challengeType) as IChallenge;
+                challenge?.Run();
+            }
         }
     }
 
