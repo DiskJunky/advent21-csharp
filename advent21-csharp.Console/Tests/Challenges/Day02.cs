@@ -15,20 +15,24 @@
             var readings = soundingReader.Load();
 
             // count how many increased from the second setting
-            int lastReading = readings[0];
+            int lastReading = 0;
             int increaseCount = 0;
-            for (int i = 1; i < readings.Count; i++)
+            int queueCapacity = 3;
+            var queue = new Queue<int>(queueCapacity);
+            for (int i = 0; i < readings.Count; i++)
             {
-                int current = readings[i];
-                if (current > lastReading)
-                {
-                    increaseCount++;
-                }
+                if (queue.Count >= queueCapacity) queue.Dequeue();
+                queue.Enqueue(readings[i]);
+                if (queue.Count < queueCapacity) continue;
+                
+                int current = queue.ToArray().Sum();
+                if (lastReading == 0) lastReading = current;    // don't count the first reading as an increase
+                
+                if (current > lastReading) increaseCount++;
                 lastReading = current;
             }
 
-            System.Console.WriteLine($"{GetType().Name}: Found [{increaseCount}] soundings that increased.");
-
+            System.Console.WriteLine($"{GetType().Name}: Found [{increaseCount}] sounding sets that increased.");
         }
     }
 }
