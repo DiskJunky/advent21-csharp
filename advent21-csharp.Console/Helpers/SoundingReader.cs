@@ -9,7 +9,7 @@
         /// The default constructor used.
         /// </summary>
         /// <param name="filePath">The full path of the file to load.</param>
-        public SoundingReader(string? filePath) : base(filePath)
+        public SoundingReader(string filePath) : base(filePath)
         {
         }
 
@@ -17,13 +17,13 @@
         /// Load the file specified in FilePath and returns them.
         /// </summary>
         /// <returns>The list of soundings in the data.</returns>
-        public List<int> Load()
+        public new List<int> Load()
         {
-            List<string> soundings = base.Load();
+            List<string?> soundings = base.Load();
 
             soundings = new List<string?>(File.ReadAllLines(FilePath));
             var intSoundings = soundings.Where(s => !string.IsNullOrWhiteSpace(s))
-                                        .Select(s => int.Parse(s))
+                                        .Select(s => int.Parse(s ?? String.Empty))
                                         .ToList<int>();
 
             return intSoundings;

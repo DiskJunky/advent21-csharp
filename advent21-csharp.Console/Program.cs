@@ -11,8 +11,7 @@ namespace advent21_csharp.Console
         /// <summary>
         /// The main program entry point.
         /// </summary>
-        /// <param name="args">The arguments passed into the program.</param>
-        public static void Main(params string[] args)
+        public static void Main()
         {
             var challenges = ReflectionHelper.GetImplementationsOf<IChallenge>();
             foreach (var challengeType in challenges)
