@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace advent21_csharp.Console.Helpers
+﻿namespace advent21_csharp.Console.Helpers
 {
     /// <summary>
     /// This class is used to perform various tasks on assemblies.
@@ -33,26 +31,9 @@ namespace advent21_csharp.Console.Helpers
                                  .Where(p => type.IsAssignableFrom(p)
                                              && !p.IsInterface)
                                  .ToList();
-            types.Sort(new TypeSorter());
+            types.Sort(new TypeComparer());
 
             return types;
-        }
-
-        /// <summary>
-        /// This is used to compare two instances of type T.
-        /// </summary>
-        private class TypeSorter : IComparer<Type>
-        {
-            /// <summary>
-            /// This compares two instances of type Type.
-            /// </summary>
-            /// <param name="x">The first instance to compare.</param>
-            /// <param name="y">The second instance to compare.</param>
-            /// <returns>The result of the comparison.</returns>
-            public int Compare(Type? x, Type? y)
-            {
-                return string.CompareOrdinal(x?.FullName, y?.FullName);
-            }
         }
     }
 }
